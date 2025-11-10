@@ -1,6 +1,6 @@
 /* CSS Variables - Global Color Palette */
 :root {
-    --primary-color: #00629b96;
+    --primary-color: #387ba2;
     --secondary-color: #0066ccca;
     --accent-color: #004f7c;
     --text-color: #333;
@@ -71,7 +71,9 @@ body {
 
 /* Header Section */
 .header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, rgba(0, 98, 155, 0.573) 0%, rgba(0, 102, 204, 0.627) 100%), url('../images/gallery hero section.png') center/cover no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
     color: var(--white-color);
     text-align: center;
     padding: 4rem 2rem;
@@ -166,6 +168,10 @@ body {
         gap: 1rem;
     }
 
+    .header {
+        background-size: 120%;
+    }
+
     .header h1 {
         font-size: 2rem;
     }
@@ -205,6 +211,7 @@ body {
 
     .header {
         padding: 3rem 1rem;
+        background-size: 150%;
     }
 
     .header h1 {
