@@ -4,10 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IEEE Conference 2025</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index.css">  
+  <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
+<!-- ===== Navbar Start ===== -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="logo-container">
+        <img src="images/ieee logo.jpeg" alt="IEEE Logo" class="logo-img" />
+      </a>
 
+      <!-- Hamburger Menu for Mobile -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="register-btn">Register Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      links.classList.toggle('active');
+    });
+  </script>
   <!-- Hero Section -->
 <section class="hero">
   <div class="slider-container">
@@ -118,6 +151,6 @@
     © 2025 IEEE Student Branch | All Rights Reserved
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
