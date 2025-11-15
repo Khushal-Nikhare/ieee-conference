@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/imageeee.png" alt="Registration forIEEE International Conference on Emerging
+Engineering Technologies and Applications
+(IC-EETA’25)  3rd National Hip Course & INDOCON 2026" class="registration-banner">
+        <h1>Registration Form</h1>
+        <p>Please fill in the details below to complete your registration.</p>
+        
+        <form action="#" method="post">
+            <fieldset>
+                <legend>PERSONAL INFORMATION</legend>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <select id="title" name="title">
+                            <option value="mr">Mr</option>
+                            <option value="ms">Ms</option>
+                            <option value="dr">Dr</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="middleName">Middle Name</label>
+                        <input type="text" id="middleName" name="middleName" placeholder="Enter Middle Name">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number *</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter Your Number" pattern="[0-9]{10}" required>
+                        <small>10-digit mobile number</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State *</label>
+                        <select id="state" name="state" required>
+                            <option value="">Select State</option>
+                            <option value="AN">ANDAMAN AND NICOBAR ISLANDS</option>
+                            <option value="AP">ANDHRA PRADESH</option>
+                            <option value="AR">ARUNACHAL PRADESH</option>
+                            <option value="AS">ASSAM</option>
+                            <option value="BR">BIHAR</option>
+                            <option value="CH">CHANDIGARH</option>
+                            <option value="CT">CHHATTISGARH</option>
+                            <option value="DN">DADRA AND NAGAR HAVELI AND DAMAN AND DIU</option>
+                            <option value="DL">DELHI</option>
+                            <option value="GA">GOA</option>
+                            <option value="GJ">GUJARAT</option>
+                            <option value="HR">HARYANA</option>
+                            <option value="HP">HIMACHAL PRADESH</option>
+                            <option value="JK">JAMMU AND KASHMIR</option>
+                            <option value="JH">JHARKHAND</option>
+                            <option value="KA">KARNATAKA</option>
+                            <option value="KL">KERALA</option>
+                            <option value="LA">LADAKH</option>
+                            <option value="LD">LAKSHADWEEP</option>
+                            <option value="MP">MADHYA PRADESH</option>
+                            <option value="MH">MAHARASHTRA</option>
+                            <option value="MN">MANIPUR</option>
+                            <option value="ML">MEGHALAYA</option>
+                            <option value="MZ">MIZORAM</option>
+                            <option value="NL">NAGALAND</option>
+                            <option value="OR">ODISHA</option>
+                            <option value="PY">PUDUCHERRY</option>
+                            <option value="PB">PUNJAB</option>
+                            <option value="RJ">RAJASTHAN</option>
+                            <option value="SK">SIKKIM</option>
+                            <option value="TN">TAMIL NADU</option>
+                            <option value="TS">TELANGANA</option>
+                            <option value="TR">TRIPURA</option>
+                            <option value="UP">UTTAR PRADESH</option>
+                            <option value="UK">UTTARAKHAND</option>
+                            <option value="WB">WEST BENGAL</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="Enter City">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                    </div>
+                    
+                </div>
+
+                <div class="form-row">
+                  
+                    <div class="form-group">
+                        <label for="institute">Institute</label>
+                        <input type="text" id="institute" name="institute" placeholder="Enter Institute">
+                    </div>
+                    <div class="form-group"></div> 
+                </div>
+            </fieldset>
+            
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+</body>
+</html>
