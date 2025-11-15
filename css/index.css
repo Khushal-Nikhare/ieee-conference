@@ -211,7 +211,7 @@ section {
   text-align: center;
   color: #ffffff; /* White text for better visibility */
   padding: 100px 20px;
-  background: url("images/venue.jpeg") center/cover no-repeat;
+  background: url("/images/venue.jpeg") center/cover no-repeat;
   background-attachment: fixed; /* Gives a parallax effect on scroll */
   overflow: hidden;
 }
