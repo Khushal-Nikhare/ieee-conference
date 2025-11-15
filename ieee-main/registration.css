@@ -17,11 +17,11 @@ body {
     background: linear-gradient(180deg, rgba(135, 206, 235, 0.4) 0%, rgba(42, 102, 174, 0.2) 100%);
     background-attachment: fixed; /* Fixes the gradient background */
     color: var(--text-color);
-    
+    padding: 20px 0;
 }
 
 /* --- Container and Headings --- */
-.container-registration {
+.container {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
@@ -30,14 +30,14 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.container-registration h1 {
+.container h1 {
     color: var(--primary-blue);
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
-.container-registration p {
+.container p {
     color: #666;
     margin-bottom: 30px;
     font-size: 16px;

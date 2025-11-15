@@ -146,14 +146,6 @@ body {
     text-align: center;
 }
 
-/* Footer */
-.footer {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-}
 
 /* Responsive Design - Tablet */
 @media (max-width: 768px) {

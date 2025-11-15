@@ -6,9 +6,9 @@ body {
 }
 
 /* Navbar container */
-.navbar {
+.navbars {
   width: 100%;
-  height: 32px;
+  height: 54px;
   background-color: rgba(106, 163, 206, 1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -19,8 +19,8 @@ body {
 }
 
 /* Inner area (center 60%) with 20% margin on both sides */
-.navbar-inner {
-  width: 60%;
+.navbar-inners {
+  width: 72%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +28,7 @@ body {
 
 /* IEEE Logo */
 .logo-container img {
-  height: 20px;
+  height: 40px;
   width: auto;
   display: block;
 }
@@ -47,7 +47,7 @@ body {
 .nav-links a {
   text-decoration: none;
   color: #fff;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   padding: 4px 8px;
   position: relative;
@@ -74,9 +74,9 @@ body {
 .register-btn {
   background: linear-gradient(180deg, #2f57b5, #1d3c92);
   color: #fff;
-  padding: 4px 12px;
-  border-radius: 16px;
-  font-size: 12px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 16px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -124,7 +124,7 @@ body {
 
   .nav-links {
     position: absolute;
-    top: 32px;
+    top: 60px;
     left: -100%;
     flex-direction: column;
     width: 100%;
