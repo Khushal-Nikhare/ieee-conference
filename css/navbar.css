@@ -1,162 +1,126 @@
-/* ===== IEEE NAVBAR CSS ===== */
-body {
+* {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Navbar container */
-.navbars {
-  width: 100%;
-  height: 54px;
-  background-color: rgba(106, 163, 206, 1);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 10;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-/* Inner area (center 60%) with 20% margin on both sides */
-.navbar-inners {
-  width: 72%;
+.xnav-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: white;
+  padding: 14px 40px;
+  border-bottom: 1px solid #ddd;
 }
 
-/* IEEE Logo */
-.logo-container img {
-  height: 40px;
-  width: auto;
-  display: block;
+.xid-mark {
+  font-weight: 700;
+  font-size: 18px;
+  color: #003b8e;
 }
 
-/* Navbar links */
-.nav-links {
-  list-style: none;
+/* LINKS */
+.xlink-box {
+  display: flex;
+  gap: 22px;
+}
+
+.xlink-box a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #003b8e;
+}
+
+/* CTA BUTTONS */
+.xtop-cta {
+  display: flex;
+  gap: 12px;
+}
+
+.xbtn {
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
 }
 
-/* Links */
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 4px 8px;
+/* BLUE ACTION BUTTON */
+.xblue {
+  background: #006aa8;
+  color: white;
+}
+
+/* RED ACTION BUTTON */
+.xred {
+  background: #ff2d2d;
+  color: white;
+}
+
+/* CIRCLE ICON */
+.xicon-dot {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 8px;
   position: relative;
-  transition: all 0.3s ease;
 }
 
-/* Hover underline */
-.nav-links a::after {
-  content: "";
+/* ARROW INSIDE CIRCLE */
+.xicon-dot::before {
+  content: "↓";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 1.5px;
-  background-color: wheat;
-  transition: width 0.3s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size: 11px;
+  color: #ff2d2d;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* Register Button */
-.register-btn {
-  background: linear-gradient(180deg, #2f57b5, #1d3c92);
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(47, 87, 181, 0.3);
-}
-
-.register-btn:hover {
-  background: linear-gradient(180deg, #3b6ce2, #2346a3);
-  transform: translateY(-1px);
-  box-shadow: 0 3px 6px rgba(47, 87, 181, 0.4);
-}
-
-/* Hamburger Menu */
-.menu-toggle {
+/* MOBILE MENU */
+#xx-toggle {
   display: none;
-  flex-direction: column;
+}
+
+.xx-btn {
+  display: none;
+  font-size: 28px;
   cursor: pointer;
+  color: #003b8e;
 }
 
-.bar {
-  height: 3px;
-  width: 25px;
-  background-color: white;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: 0.3s ease;
-}
-
-/* ===== Responsive Design ===== */
-@media (max-width: 1024px) {
-  .navbar-inner {
-    width: 80%;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar-inner {
-    width: 90%;
-    justify-content: space-between;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .xlink-box,
+  .xtop-cta {
+    display: none;
   }
 
-  .menu-toggle {
+  .xx-btn {
+    display: block;
+  }
+
+  #xx-toggle:checked ~ .xlink-box,
+  #xx-toggle:checked ~ .xtop-cta {
     display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    left: -100%;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(106, 163, 206, 0.95);
-    text-align: center;
-    padding: 20px 0;
-    transition: all 0.3s ease;
+    gap: 14px;
+    background: white;
+    padding: 16px;
   }
 
-  .nav-links.active {
-    left: 0;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-
-  .menu-toggle.active .bar:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
-  }
-
-  .menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
-  }
-
-  .register-btn {
-    display: inline-block;
-    border-radius: 20px;
-    padding: 6px 14px;
+  .xnav-wrap {
+    flex-wrap: wrap;
   }
 }
