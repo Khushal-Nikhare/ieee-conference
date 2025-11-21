@@ -1,0 +1,263 @@
+/* ============================================
+   COMMITTEES PAGE STYLESHEET
+   IEEE Conference Website
+   CSS-only, responsive, accessible design
+   ============================================ */
+
+/* ===== CSS Variables (Conference Color Palette) ===== */
+:root {
+    --navy-blue: #003366;
+    --accent-blue: #0057b8;
+    --maroon-red: #8b1f3a;
+    --light-bg: #eaf2fb;
+    --white: #ffffff;
+    --text-dark: #2c3e50;
+    --text-muted: #6c757d;
+    --shadow-sm: 0 2px 6px rgba(0, 51, 102, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 51, 102, 0.12);
+}
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+}
+
+
+
+/* ===== Main Content Wrapper ===== */
+.cm-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* ===== Main Panel (Card Container) ===== */
+.cm-panel {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 60px 80px;
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== Committee Grid Layout ===== */
+/* CSS Grid for multi-column layout with balanced flow */
+.cm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */
+    gap: 40px 60px;
+    align-items: start;
+}
+
+/* ===== Committee Sections ===== */
+.cm-section {
+    break-inside: avoid; /* Prevent column breaks within sections */
+    margin-bottom: 0;
+}
+
+.cm-section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--maroon-red);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+/* ===== Committee Lists ===== */
+.cm-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cm-list li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.cm-list li strong {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.cm-list li span {
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+/* ===== Footer (Using footer.css styles) ===== */
+/* Custom footer styles removed - now using .footer class from footer.css */
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Wide Desktop (>= 1200px): Three columns for better balance */
+@media (min-width: 1200px) {
+    .cm-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 50px;
+    }
+}
+
+/* Tablet (768px - 1199px): Two columns */
+@media (max-width: 1199px) {
+    .cm-panel {
+        padding: 50px 60px;
+    }
+
+    .cm-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 50px;
+    }
+}
+
+/* Mobile (< 768px): Single column */
+@media (max-width: 767px) {
+    body {
+        font-size: 15px;
+    }
+
+    .cm-wrap {
+        padding: 40px 16px;
+    }
+
+    .cm-panel {
+        padding: 40px 24px;
+        border-radius: 12px;
+    }
+
+    /* Single column on mobile */
+    .cm-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cm-section-title {
+        font-size: 0.95rem;
+    }
+
+    .cm-list li {
+        font-size: 0.88rem;
+        margin-bottom: 10px;
+    }
+}
+
+/* Extra Small Mobile (< 480px) */
+@media (max-width: 479px) {
+    .cm-panel {
+        padding: 30px 20px;
+    }
+
+    .cm-list li {
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   Clean, single-column, black-and-white output
+   ============================================ */
+@media print {
+    /* Remove colors and backgrounds for ink efficiency */
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        font-size: 11pt;
+        line-height: 1.5;
+        background: white;
+    }
+
+    /* Hide navigation and header for clean print */
+    .xnav-wrap,
+    .header,
+    .footer {
+        display: none;
+    }
+
+    .cm-wrap {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cm-panel {
+        padding: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    /* Single column for logical reading order */
+    .cm-grid {
+        display: block;
+        columns: 1;
+    }
+
+    .cm-section {
+        page-break-inside: avoid;
+        margin-bottom: 20pt;
+    }
+
+    .cm-section-title {
+        font-size: 11pt;
+        font-weight: bold;
+        margin-bottom: 8pt;
+        color: black;
+    }
+
+    .cm-list li {
+        font-size: 10pt;
+        margin-bottom: 4pt;
+        color: black;
+    }
+
+    .cm-list li strong {
+        font-weight: bold;
+    }
+
+    .cm-list li span {
+        color: black;
+    }
+
+    /* Add page title at top */
+    .cm-wrap::before {
+        content: "COMMITTEES - IEEE Conference 2025";
+        display: block;
+        font-size: 16pt;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20pt;
+        padding-bottom: 10pt;
+        border-bottom: 2pt solid black;
+    }
+
+    /* Avoid page breaks in the middle of list items */
+    .cm-list li {
+        page-break-inside: avoid;
+    }
+}
+
+
+

@@ -17,6 +17,7 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
+/* BRAND */
 .xid-mark {
   font-weight: 700;
   font-size: 18px;
@@ -37,7 +38,7 @@ body {
   color: #003b8e;
 }
 
-/* CTA BUTTONS */
+/* ACTION BUTTONS */
 .xtop-cta {
   display: flex;
   gap: 12px;
@@ -54,19 +55,19 @@ body {
   align-items: center;
 }
 
-/* BLUE ACTION BUTTON */
+/* BLUE BUTTON */
 .xblue {
   background: #006aa8;
   color: white;
 }
 
-/* RED ACTION BUTTON */
+/* RED BUTTON */
 .xred {
   background: #ff2d2d;
   color: white;
 }
 
-/* CIRCLE ICON */
+/* BROCHURE ICON */
 .xicon-dot {
   width: 18px;
   height: 18px;
@@ -76,7 +77,6 @@ body {
   position: relative;
 }
 
-/* ARROW INSIDE CIRCLE */
 .xicon-dot::before {
   content: "↓";
   position: absolute;
@@ -87,7 +87,30 @@ body {
   color: #ff2d2d;
 }
 
-/* MOBILE MENU */
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+========================================= */
+
+/* Tablet (show menu but reduce spacing) */
+@media (max-width: 1024px) {
+  .xnav-wrap {
+    padding: 14px 24px;
+  }
+  .xlink-box {
+    gap: 14px;
+  }
+  .xbtn {
+    padding: 8px 18px;
+  }
+  .xbtn.xred {
+    padding: 8px 14px;
+  }
+  .xicon-dot {
+    margin-right: 6px;
+  }
+}
+
+/* Mobile Menu */
 #xx-toggle {
   display: none;
 }
@@ -99,8 +122,8 @@ body {
   color: #003b8e;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+/* Mobile layout */
+@media (max-width: 768px) {
   .xlink-box,
   .xtop-cta {
     display: none;
