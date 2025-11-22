@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/contact_us.css" />
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <!-- ===== Navbar Start ===== -->
+    <header class="xnav-wrap">
+        <a href="index.html">
+            <div class="xid-mark">IEEE</div>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <input type="checkbox" id="xx-toggle">
+        <label for="xx-toggle" class="xx-btn">&#9776;</label>
+
+        <nav class="xlink-box">
+            <a href="#">ABOUT CONFERENCE</a>
+            <a href="#">ABOUT UNIVERSITY</a>
+            <a href="committees.html">COMMITTEES</a>
+            <a href="accepted.html">PAPER GUIDELINES</a>
+            <a href="#">VENUE</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="contact_us.html">CONTACT US</a>
+            <a href="topic.html">TOPICS</a>
+        </nav>
+
+        <div class="xtop-cta">
+            <a class="xbtn xblue" href="#">PAPER SUBMISSION</a>
+            <a class="xbtn xblue" href="registration.html">REGISTER</a>
+            <a class="xbtn xred" href="#">
+                <span class="xicon-dot"></span>
+                BROCHURE
+            </a>
+        </div>
+    </header>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const links = document.getElementById('nav-links');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            links.classList.toggle('active');
+        });
+    </script>
+    <div class="container">
+        <header>
+            <h1>CONTACT US</h1>
+        </header>
+
+        <section class="content">
+            <p class="info">Here's where you can reach us : <a
+                    href="mailto:iceeta2025@medicaps.ac.in">iceeta2025@medicaps.ac.in</a></p>
+
+            <p><strong>For Paper Submission :</strong> Dr. Vipin Sharma - <span class="red">+91 9479628030</span></p>
+
+            <p><strong>For Travel and Stay :</strong> Dr. Sanjeev Jain - <span class="red">+91 9827282120</span></p>
+
+            <p><strong>For Conference Event Related :</strong> Prof. Ram Bansal - <span class="red">+91
+                    7000110427</span></p>
+
+            <div class="line"></div>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled footer-navbar-links">
+                        <li><a class="nav-link" href="index.html">Home</a></li>
+                        <li><a class="nav-link" href="#">About</a></li>
+                        <li><a class="nav-link" href="#">Events</a></li>
+                        <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled small">
+                        <li>
+                            <i class="fas fa-envelope me-2 text-primary"></i>General:
+                            <a href="mailto:iceeta2025@medicaps.ac.in">iceeta2025@medicaps.ac.in</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fas fa-file-alt me-2 text-info"></i>Paper Submission:
+                            Dr. Vipin Sharma -
+                            <a href="tel:+919479628030">+91 9479628030</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fas fa-plane-departure me-2 text-warning"></i>Travel
+                            and Stay: Dr. Sanjeev Jain -
+                            <a href="tel:+919827282120">+91 9827282120</a>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fas fa-calendar-alt me-2 text-danger"></i>Conference
+                            Event: Prof. Ram Bansal -
+                            <a href="tel:+917000110427">+91 7000110427</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 col-sm-12 mb-4">
+                    <h5>Connect With Us</h5>
+                    <ul class="list-inline footer-links ms-0">
+                        <li class="list-inline-item">
+                            <a href="#" aria-label="Facebook">
+                                <i class="fab fa-facebook fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" aria-label="Twitter">
+                                <i class="fab fa-twitter fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" aria-label="Instagram">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" aria-label="YouTube">
+                                <i class="fab fa-youtube fa-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="text-secondary" />
+            <div class="row small text-white">
+                <div class="col-12 text-center">
+                    <p class="mb-0">IC-EETA'25 | &copy; 2025 IC-EETA'25</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

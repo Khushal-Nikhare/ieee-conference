@@ -17,8 +17,9 @@
 </head>
 
 <body>
+    <!-- ===== Navbar Start ===== -->
     <header class="xnav-wrap">
-        <a href="index.html" >
+        <a href="index.html">
             <div class="xid-mark">IEEE</div>
         </a>
 
@@ -29,12 +30,12 @@
         <nav class="xlink-box">
             <a href="#">ABOUT CONFERENCE</a>
             <a href="#">ABOUT UNIVERSITY</a>
-            <a href="#">COMMITTEES</a>
-            <a href="#">PAPER GUIDELINES</a>
+            <a href="committees.html">COMMITTEES</a>
+            <a href="accepted.html">PAPER GUIDELINES</a>
             <a href="#">VENUE</a>
             <a href="gallery.html">GALLERY</a>
-            <a href="#">CONTACT US</a>
-            <a href="#">TOPICS</a>
+            <a href="contact_us.html">CONTACT US</a>
+            <a href="topic.html">TOPICS</a>
         </nav>
 
         <div class="xtop-cta">
@@ -46,6 +47,15 @@
             </a>
         </div>
     </header>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const links = document.getElementById('nav-links');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            links.classList.toggle('active');
+        });
+    </script>
     <div class="container-registration">
         <img src="images/imageeee.png" alt="Registration forIEEE International Conference on Emerging
 Engineering Technologies and Applications
