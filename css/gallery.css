@@ -71,7 +71,7 @@ body {
 
 /* Header Section */
 .header {
-    background: linear-gradient(135deg, rgba(0, 98, 155, 0.573) 0%, rgba(0, 102, 204, 0.627) 100%), url('../images/gallery hero section.png') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(0, 98, 155, 0.573) 0%, rgba(0, 102, 204, 0.627) 100%), url('../media/images/gallery-hero-section.png') center/cover no-repeat;
     background-attachment: scroll;
     background-size: cover;
     color: var(--white-color);

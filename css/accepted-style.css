@@ -112,10 +112,10 @@ body {
     align-items: center;
     gap: 12px;
     padding: 16px 40px;
-    background-color: #ff2d2d;
+    background-color: #8b1f3a;
     color: var(--white);
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
