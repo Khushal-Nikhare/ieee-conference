@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.xnav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 14px 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* BRAND */
+.xid-mark {
+  font-weight: 700;
+  font-size: 18px;
+  color: #003b8e;
+}
+
+/* LINKS */
+.xlink-box {
+  display: flex;
+  gap: 22px;
+}
+
+.xlink-box a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #003b8e;
+}
+
+/* ACTION BUTTONS */
+.xtop-cta {
+  display: flex;
+  gap: 12px;
+}
+
+.xbtn {
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+/* BLUE BUTTON */
+.xblue {
+  background: #006aa8;
+  color: white;
+}
+
+/* RED BUTTON */
+.xred {
+  background: #ff2d2d;
+  color: white;
+}
+
+/* BROCHURE ICON */
+.xicon-dot {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+}
+
+.xicon-dot::before {
+  content: "↓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size: 11px;
+  color: #ff2d2d;
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+========================================= */
+
+/* Tablet (show menu but reduce spacing) */
+@media (max-width: 1024px) {
+  .xnav-wrap {
+    padding: 14px 24px;
+  }
+  .xlink-box {
+    gap: 14px;
+  }
+  .xbtn {
+    padding: 8px 18px;
+  }
+  .xbtn.xred {
+    padding: 8px 14px;
+  }
+  .xicon-dot {
+    margin-right: 6px;
+  }
+}
+
+/* Mobile Menu */
+#xx-toggle {
+  display: none;
+}
+
+.xx-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #003b8e;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .xlink-box,
+  .xtop-cta {
+    display: none;
+  }
+
+  .xx-btn {
+    display: block;
+  }
+
+  #xx-toggle:checked ~ .xlink-box,
+  #xx-toggle:checked ~ .xtop-cta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 14px;
+    background: white;
+    padding: 16px;
+  }
+
+  .xnav-wrap {
+    flex-wrap: wrap;
+  }
+}

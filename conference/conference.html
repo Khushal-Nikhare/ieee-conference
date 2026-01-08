@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> IC-EETA Conference | Medi-Caps University</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .font-open-sans {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(80, 55, 119, 0.85), rgba(80, 55, 119, 0.70)),url("images/central-library-img.webp");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #b27814; /* Amber-500 */
+            margin: 10px auto;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #b27814;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #503777;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #503777;
+            
+        }
+    </style>
+    <style>
+        /* --- Custom Animation for Entrance --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* --- NEW: Custom Animation for Conveyor Belt --- */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Move left by 50% because the container is double width */
+                transform: translateX(-50%); 
+            }
+        }
+        .animate-scroll {
+            /* Run eternally, linear speed, 25 seconds per loop */
+            animation: scroll 25s linear infinite;
+        }
+
+        /* Optional: Pause the conveyor belt on hover for better user accessibility */
+        .hover-pause:hover .animate-scroll {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Top Bar -->
+    <div class="bg-blue-900 text-white text-xs sm:text-sm py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="hidden sm:block">
+                <i class="fas fa-university mr-2"></i> Initiated By Medi-Caps University
+            </div>
+            <div class="flex space-x-4">
+                <span><i class="fas fa-hashtag mr-1"></i></span>
+                <a href="https://www.facebook.com/medicapsuniversityindore/" class="hover:text-amber-400"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/mediuniversity" class="hover:text-amber-400"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/school/medicaps-university-indore/posts/?feedView=all" class="hover:text-amber-400"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Area -->
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="flex flex-col">
+                     <span class="flex items-center gap-4 text-2xl font-black text-blue-900 tracking-tight">
+    <img src="./images/logo.webp" alt= "MEDICAPS" width="200px" height="400px">
+    <img src="images/TARUMT1.jpg" width="200px" height="400px" alt="TARUMT">
+</span>
+
+                       
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8 font-medium text-sm uppercase text-gray-700">
+                    <a href="#Home" class="nav-link hover:text-blue-900 transition">Home</a>
+                    <a href="#About University" class="nav-link hover:text-blue-900 transition">About University</a>
+                    <a href="#Paper Guidelines" class="nav-link hover:text-blue-900 transition">Paper Guidelines</a>
+                     <a href="ieee-main/topic.html" class="nav-link hover:text-blue-900 transition">Topics</a>
+                    <a href="venue.html" class="nav-link hover:text-blue-900 transition">Venue</a>
+                    <a href="ieee-main/contact_us.html" class="nav-link hover:text-blue-900 transition">Contact Us</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="ieee-main/registration.html" class="bg-blue-900 text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-blue-800 transition shadow-lg animate-pulse">
+                        REGISTER NOW
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-gray-700 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t p-4 space-y-3 shadow-lg">
+            <a href="#home" class="block text-gray-700 font-medium hover:text-blue-900">Home</a>
+            <a href="#About University" class="block text-gray-700 font-medium hover:text-blue-900">About University</a>
+            <a href="#Paper Guidelines" class="block text-gray-700 font-medium hover:text-blue-900">Paper Guidelines</a>
+            <a href="ieee-main/topic.html" class="block text-gray-700 font-medium hover:text-blue-900">Topics</a>
+            <a href="venue.html" class="block text-gray-700 font-medium hover:text-blue-900">Venue</a>
+            <a href="ieee-main/contact_us.html" class="block text-gray-700 font-medium hover:text-blue-900">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen min-h-[600px] flex items-center justify-center text-white relative px-4">
+        <div class="text-center max-w-5xl mx-auto z-10">
+            <div class="mb-4 inline-block bg-amber-500 text-black px-3 py-1 rounded font-bold text-xs uppercase tracking-wide">
+                IEEE Conference 
+            </div>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                IEEE International Conference on <br>
+                <span class="text-amber-400">Emerging Engineering Technologies</span> <br>
+                and Applications
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-8 font-open-sans">
+                November 6-8, 2025 | Medi-Caps University, Indore, India
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#dates" class="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
+                    Paper Submission
+                </a>
+                <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-blue-900 transition shadow-lg">
+                    Download Brochure
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white text-2xl"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Marquee for updates -->
+    <div class="bg-amber-500 text-black font-bold py-2 overflow-hidden whitespace-nowrap">
+        <div class="inline-block animate-[marquee_20s_linear_infinite] px-4">
+            <span class="mx-4"><i class="fas fa-bullhorn mr-2"></i> Paper Submission Deadline Extended to June 30, 2025!</span>
+            <span class="mx-4"><i class="fas fa-calendar-alt mr-2"></i> Conference Dates: Nov 6-8, 2025</span>
+            <span class="mx-4"><i class="fas fa-map-marker-alt mr-2"></i> Venue: Medi-Caps University, Indore</span>
+            <span class="mx-4"><i class="fas fa-bullhorn mr-2"></i> Early Bird Registration ends July 15, 2025</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6 section-title text-center md:text-left">About The Conference</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed text-justify">
+                        The objective of IC-EETA'25 is to foster a dynamic exchange of knowledge and innovation across the domains of 
+                        <strong>mechanical, civil, electrical and computer engineering</strong>. By bringing together leading scholars, industry experts, 
+                        and visionary practitioners, the conference aims to strengthen academic-industry collaboration and provide a forum 
+                        for the dissemination of pioneering research.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-justify">
+                        Emphasizing interdisciplinary synergy, the event is aimed at addressing pressing global challenges while promoting 
+                        sustainable, cutting-edge practices. Ultimately, it aspires to contribute to the technological growth and 
+                        sustainable development of our nation.
+                    </p>
+                    <a href="aboutconf.html" class="text-blue-900 font-bold hover:text-amber-500 transition">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-amber-100 rounded-full z-0"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-50 rounded-full z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" alt="Conference Discussion" class="relative z-10 rounded-lg shadow-2xl w-full object-cover h-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gradient block -->
+                <section class="relative bg-gradient-to-r from-[#2a3680] to-[#961c36] py-16 px-4 sm:px-6 lg:px-8 text-white overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            
+            <div class="group animate-fade-up flex flex-col items-center justify-center space-y-4 cursor-pointer transition-transform duration-300 hover:-translate-y-2" style="animation-delay: 0.1s;">
+                <div class="w-24 h-24 flex items-center justify-center mb-2">
+                    <svg class="w-20 h-20 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold tracking-wide">Program Committee</h3>
+                <a href="ieee-conference-main/committees.html" class="text-sm font-medium opacity-80 hover:opacity-100 flex items-center gap-2 transition-all">
+                    More Details <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="group animate-fade-up flex flex-col items-center justify-center space-y-4 cursor-pointer transition-transform duration-300 hover:-translate-y-2" style="animation-delay: 0.2s;">
+                <div class="w-24 h-24 flex items-center justify-center mb-2">
+                    <svg class="w-20 h-20 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M96 96c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H80c-44.2 0-80-35.8-80-80V128c0-44.2 35.8-80 80-80zm384 0H160V416h320V96zM64 128c-17.7 0-32 14.3-32 32V400c0 17.7 14.3 32 32 32H96V128H64z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold tracking-wide">Paper Guidelines</h3>
+                <a href="ieee-conference-main/accepted.html" class="text-sm font-medium opacity-80 hover:opacity-100 flex items-center gap-2 transition-all">
+                    More Details <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="group animate-fade-up flex flex-col items-center justify-center space-y-4 cursor-pointer transition-transform duration-300 hover:-translate-y-2" style="animation-delay: 0.3s;">
+                <div class="w-24 h-24 flex items-center justify-center mb-2">
+                    <svg class="w-20 h-20 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold tracking-wide">Venue</h3>
+                <a href="#" class="text-sm font-medium opacity-80 hover:opacity-100 flex items-center gap-2 transition-all">
+                    More Details <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- collaborations and media collaborations -->
+
+   <section class="bg-[#eaf4fc] py-16 hover-pause overflow-hidden">
+        <div class="w-full text-center space-y-12">
+            
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#6a1b45] uppercase tracking-wide drop-shadow-sm animate-fade-up px-4">
+               Collaborations
+            </h2>
+
+            <div class="relative w-full overflow-hidden py-8 animate-fade-up" style="animation-delay: 0.2s;">
+                
+                <div class="flex w-[200%] animate-scroll items-center">
+                    
+                    <div class="flex w-1/2 justify-around items-center px-4 gap-12 sm:gap-24 md:gap-32">
+                        <img src="images/international conference alert.png" alt="All Conference Alert" 
+                             class="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300">
+                        <img src="images/MIIFoundationLogo.5bf921cb0cfa0c3ff279.png" alt="MII Foundation" 
+                             class="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300">
+                         <img src="images/inti.png"INIT" 
+                             class="h-12 sm:h-16 md:h-20 object-containtransition-all duration-300">
+                        <img src="images/download.png" alt="SMU" 
+                             class="h-12 sm:h-16 md:h-20 transition-all duration-300">
+                        <img src="images/ieee mb blue.png" alt="IEEE Logo" 
+                             class="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300">
+                        <img src="images/DPU_logo.ec402b412555c47d5355.png" alt="DPU Logo" 
+                             class="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300">
+                         <img src="images/tarumt-logo.a40b904664e3eeb03b71.png" alt="TARUMT Logo" 
+                             class="h-12 sm:h-16 md:h-20 object-contain transition-all duration-300">
+                        <img src="images/TECLogo.314f147d18720606c28a.png" alt="Web of Science Logo" 
+                             class="h-12 sm:h-16 md:h-20 object-contain  transition-all duration-300">
+                    </div>
+                    
+                </div>
+            </div>
+           
+    </section>
+                
+             
+            
+            <div class="mt-12 text-center">
+                 <div class="bg-blue-900 text-white p-4 rounded-lg inline-block shadow-lg">
+                    <i class="fas fa-calendar-check mr-2"></i> 
+                    <span class="font-bold">Conference Date:</span> November 6-8, 2025
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracks / Scope -->
+    <section id="scope" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-blue-900 text-center mb-12 section-title">Conference Scope</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 border rounded-xl hover:shadow-xl transition group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-900 transition">
+                        <i class="fas fa-cogs text-2xl text-blue-900 group-hover:text-white transition"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Mechanical Engineering</h4>
+                    <p class="text-sm text-gray-500">Thermal analysis, sustainable energy, advanced materials.</p>
+                </div>
+                <div class="text-center p-6 border rounded-xl hover:shadow-xl transition group">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 transition">
+                        <i class="fas fa-hard-hat text-2xl text-amber-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Civil Engineering</h4>
+                    <p class="text-sm text-gray-500">Green building, structural integrity, smart cities.</p>
+                </div>
+                <div class="text-center p-6 border rounded-xl hover:shadow-xl transition group">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600 transition">
+                        <i class="fas fa-bolt text-2xl text-green-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Electrical Engineering</h4>
+                    <p class="text-sm text-gray-500">Power systems, renewable energy grids, IoT applications.</p>
+                </div>
+                <div class="text-center p-6 border rounded-xl hover:shadow-xl transition group">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600 transition">
+                        <i class="fas fa-laptop-code text-2xl text-purple-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Computer Engineering</h4>
+                    <p class="text-sm text-gray-500">AI/ML solutions, data science, cyber-physical systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keynote Speakers (Placeholders based on text) -->
+    <section id="speakers" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-blue-900 text-center mb-12 section-title">Keynote Speakers</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Speaker 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg text-center pb-6">
+                    <div class="h-32 bg-blue-900"></div>
+                    <img src="https://ui-avatars.com/api/?name=Yip+Mum+Wai&background=random" alt="Speaker" class="w-24 h-24 rounded-full border-4 border-white mx-auto -mt-12 mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800">Prof. Ts. Dr Yip Mum Wai</h3>
+                    <p class="text-sm text-blue-600 font-medium mb-2">Chair of Centre for Systematic Innovation Research</p>
+                    <p class="text-xs text-gray-500 px-4">Expert in Systematic Innovation and Engineering Management.</p>
+                </div>
+                
+                <!-- Speaker 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg text-center pb-6">
+                    <div class="h-32 bg-amber-500"></div>
+                    <img src="https://ui-avatars.com/api/?name=Ricky+Liew&background=random" alt="Speaker" class="w-24 h-24 rounded-full border-4 border-white mx-auto -mt-12 mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800">Ir. Ricky Liew Chee Leong</h3>
+                    <p class="text-sm text-blue-600 font-medium mb-2">Professor of Construction Management</p>
+                    <p class="text-xs text-gray-500 px-4">Leading authority on sustainable construction practices.</p>
+                </div>
+
+                <!-- Speaker 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg text-center pb-6">
+                    <div class="h-32 bg-blue-900"></div>
+                    <img src="https://ui-avatars.com/api/?name=Christopher+Preece&background=random" alt="Speaker" class="w-24 h-24 rounded-full border-4 border-white mx-auto -mt-12 mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800">Prof Dr Christopher Nigel Preece</h3>
+                    <p class="text-sm text-blue-600 font-medium mb-2">Head of Engineering</p>
+                    <p class="text-xs text-gray-500 px-4">Distinguished researcher in infrastructure development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Events -->
+     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-[#eaf4fc]"> <div class="max-w-7xl mx-auto font-sans">
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#6a1b45] mb-12 tracking-wide animate-fade-up">
+                Previous Conferences
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+
+                <div class="group rounded-2xl shadow-md overflow-hidden bg-white animate-fade-up transition-all duration-500 hover:shadow-2xl hover:-translate-y-2" style="animation-delay: 0.1s;">
+                    <div class="overflow-hidden h-60">
+                        <img src="https://picsum.photos/id/1015/600/400" alt="Conference Audience" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="bg-[#2a3680] p-5 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-10"></div>
+                        <p class="text-white text-lg font-semibold relative z-10">
+                            2nd IEEE Conference IC4 <span class="text-[#e63946] font-bold ml-1">2024</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group rounded-2xl shadow-md overflow-hidden bg-white animate-fade-up transition-all duration-500 hover:shadow-2xl hover:-translate-y-2" style="animation-delay: 0.2s;">
+                    <div class="overflow-hidden h-60">
+                        <img src="https://picsum.photos/id/1048/600/400" alt="Conference Seminar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="bg-[#2a3680] p-5 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-10"></div>
+                        <p class="text-white text-lg font-semibold relative z-10">
+                            ICRTICE - <span class="text-[#e63946] font-bold ml-1">2019</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group rounded-2xl shadow-md overflow-hidden bg-white animate-fade-up transition-all duration-500 hover:shadow-2xl hover:-translate-y-2" style="animation-delay: 0.3s;">
+                    <div class="overflow-hidden h-60">
+                        <img src="https://picsum.photos/id/1059/600/400" alt="Group Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="bg-[#2a3680] p-5 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-10"></div>
+                        <p class="text-white text-lg font-semibold relative z-10">
+                            Springer Conference ICANI - <span class="text-[#e63946] font-bold ml-1">2018</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group rounded-2xl shadow-md overflow-hidden bg-white animate-fade-up transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 lg:col-start-1 lg:justify-self-end xl:justify-self-auto" style="animation-delay: 0.4s;">
+                    <div class="overflow-hidden h-60">
+                        <img src="https://picsum.photos/id/1067/600/400" alt="Large Auditorium" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="bg-[#2a3680] p-5 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-10"></div>
+                        <p class="text-white text-lg font-semibold relative z-10">
+                            IEEE CDAN Symposium - <span class="text-[#e63946] font-bold ml-1">2016</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group rounded-2xl shadow-md overflow-hidden bg-white animate-fade-up transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 lg:col-start-2 lg:justify-self-start xl:justify-self-auto" style="animation-delay: 0.5s;">
+                    <div class="overflow-hidden h-60">
+                        <img src="https://picsum.photos/id/1035/600/400" alt="Presenters on Stage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="bg-[#2a3680] p-5 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-10"></div>
+                        <p class="text-white text-lg font-semibold relative z-10">
+                            Global Tech Summit - <span class="text-[#e63946] font-bold ml-1">2015</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue & Footer -->
+    <footer id="contact" class="bg-blue-900 text-white pt-16 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">IC-EETA'25</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed pr-8">
+                        The IEEE International Conference on Emerging Engineering Technologies and Applications is a premier gathering for researchers and practitioners. Organized by Medi-Caps University, Indore.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-amber-500 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-amber-500 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-amber-500 transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2 inline-block">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#home" class="hover:text-amber-400 transition"><i class="fas fa-angle-right mr-2"></i>Home</a></li>
+                        <li><a href="#dates" class="hover:text-amber-400 transition"><i class="fas fa-angle-right mr-2"></i>Key Dates</a></li>
+                        <li><a href="#scope" class="hover:text-amber-400 transition"><i class="fas fa-angle-right mr-2"></i>Committee</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition"><i class="fas fa-angle-right mr-2"></i>Registration</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2 inline-block">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-amber-500"></i>
+                            <span>Medi-Caps University,<br>A.B. Road, Pigdamber, Rau,<br>Indore - 453331 (M.P.), India</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-amber-500"></i>
+                            <span>conference@medicaps.ac.in</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-amber-500"></i>
+                            <span>+91-123-456-7890</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy;Medi-Caps University</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for header behavior on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.add('py-0');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>

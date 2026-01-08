@@ -1,0 +1,354 @@
+/* ============================================
+   ACCEPTED PAPERS PAGE STYLESHEET
+   IEEE Conference Website
+   Matching style with committees and gallery pages
+   ============================================ */
+
+/* ===== CSS Variables (Conference Color Palette) ===== */
+:root {
+    --navy-blue: #003366;
+    --accent-blue: #0057b8;
+    --maroon-red: #8b1f3a;
+    --light-bg: #eaf2fb;
+    --white: #ffffff;
+    --text-dark: #2c3e50;
+    --text-muted: #6c757d;
+    --shadow-sm: 0 2px 6px rgba(0, 51, 102, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 51, 102, 0.12);
+}
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+}
+
+/* ===== Navigation and Header (Using existing navbar.css and gallery.css) ===== */
+/* Styles inherited from navbar.css and gallery.css */
+
+/* ===== Main Content Wrapper ===== */
+.ap-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* ===== Main Panel (Light-blue card with rounded corners) ===== */
+.ap-panel {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 60px 80px;
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== Page Main Title ===== */
+.ap-main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--maroon-red);
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== Content Container ===== */
+.ap-content {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+/* ===== Guidelines List ===== */
+.ap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 50px 0;
+}
+
+.ap-list li {
+    padding: 6px 0 6px 35px;
+    position: relative;
+    line-height: 1.6;
+    color: var(--text-dark);
+    font-size: 20px;
+}
+
+.ap-list li:last-child {
+    border-bottom: none;
+}
+
+/* Custom bullet point */
+.ap-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* ===== CTA Button Section ===== */
+.ap-cta-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.ap-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background-color: #8b1f3a;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.ap-cta-btn:hover {
+    background-color: var(--maroon-red);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 31, 58, 0.3);
+    color: var(--white);
+}
+
+/* Small white circle icon inside button */
+.ap-btn-icon {
+    width: 20px;
+    height: 20px;
+    background-color: var(--white);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+/* Download icon inside circle */
+.ap-btn-icon::after {
+    content: "↓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #ff2d2d;
+    font-weight: bold;
+}
+
+/* ===== Decorative Divider ===== */
+.ap-divider {
+    width: 120px;
+    height: 3px;
+    background-color: var(--maroon-red);
+    margin: 50px auto;
+    border-radius: 2px;
+}
+
+/* ===== Section Titles ===== */
+.ap-section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--navy-blue);
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+/* ===== Important Dates Section ===== */
+.ap-dates-section {
+    margin: 50px 0;
+}
+
+.ap-dates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.ap-date-item {
+    background: linear-gradient(135deg, var(--navy-blue), var(--accent-blue));
+    color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ap-date-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 51, 102, 0.2);
+}
+
+.ap-date-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.ap-date-value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* ===== Contact Section ===== */
+.ap-contact-section {
+    margin: 50px 0 0 0;
+    padding: 30px;
+    background-color: var(--light-bg);
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-blue);
+}
+
+.ap-contact-info {
+    margin: 15px 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ap-contact-info i {
+    color: var(--accent-blue);
+    font-size: 1.2rem;
+}
+
+.ap-contact-info a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ap-contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Wide Desktop (>= 1200px) */
+@media (min-width: 1200px) {
+    .ap-wrap {
+        max-width: 1400px;
+    }
+}
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199px) {
+    .ap-panel {
+        padding: 50px 60px;
+    }
+
+    .ap-main-title {
+        font-size: 2.2rem;
+    }
+
+    .ap-list li {
+        font-size: 15px;
+    }
+}
+
+/* Tablet and below (< 1024px) */
+@media (max-width: 1023px) {
+    .ap-panel {
+        padding: 45px 50px;
+    }
+
+    .ap-dates-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+    body {
+        font-size: 15px;
+    }
+
+    .ap-wrap {
+        padding: 40px 16px;
+    }
+
+    .ap-panel {
+        padding: 40px 24px;
+        border-radius: 12px;
+    }
+
+    .ap-main-title {
+        font-size: 1.8rem;
+        margin-bottom: 35px;
+    }
+
+    .ap-list li {
+        padding: 12px 0 12px 30px;
+        font-size: 15px;
+    }
+
+    .ap-cta-btn {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ap-section-title {
+        font-size: 1.5rem;
+    }
+
+    .ap-dates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ap-contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* Extra Small Mobile (< 480px) */
+@media (max-width: 479px) {
+    .ap-panel {
+        padding: 30px 20px;
+    }
+
+    .ap-main-title {
+        font-size: 1.5rem;
+    }
+
+    .ap-list li {
+        font-size: 14px;
+        padding: 10px 0 10px 25px;
+    }
+
+    .ap-section-title {
+        font-size: 1.3rem;
+    }
+
+    .ap-date-value {
+        font-size: 1.1rem;
+    }
+}
+
