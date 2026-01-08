@@ -1,0 +1,753 @@
+/* ============================================================
+   BASIC PAGE RESET
+   ============================================================ */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ============================================================
+   HEADER SECTION (LOGOS + TITLE)
+   ============================================================ */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: white;
+}
+
+.left-logo, .right-logo {
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Title section */
+.gradient-text {
+    background: linear-gradient(90deg, #2a3b8e, #6a1b9a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* IMPORTANT FIXES */
+    display: inline-block;      
+    background-clip: text;      
+    color: transparent;         
+}
+
+
+
+.main-title h1 {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.main-title .date {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #444;
+}
+
+/* ============================================================
+   NAVIGATION MENU
+   ============================================================ */
+.navbar {
+    width: 100%;
+    background: black;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* Buttons in Navbar */
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.blue {
+    background: #007bff;
+}
+
+.red {
+    background: red;
+}
+
+/* ============================================================
+   SCROLLING TICKER BAR
+   ============================================================ */
+   .ticker {
+    background: linear-gradient(90deg, #ff0000, #800000, #cc0000);
+    padding: 18px 0;       /* increased height */
+    color: white;
+    font-weight: bold;
+}
+
+.ticker marquee {
+    font-size: 15px;
+}
+
+/* ============================================================
+   VIEW SCHEDULE BAR
+   ============================================================ */
+.view-schedule {
+    background: #B30000;
+    padding: 10px;
+    text-align: center;
+}
+
+.view-schedule p {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.main-header {
+    background: linear-gradient(90deg, #f5f0ff, #d5c8ff, #bcaaff);
+    padding: 90px 60px;
+    text-align: center;
+}
+
+/* ============================================================
+   IMAGE SECTION AFTER VIEW SCHEDULE
+   ============================================================ */
+   .conference-image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+/* ============================================================
+   IMAGE SECTION 
+   ============================================================ */
+
+.conference-image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+/* Image default hidden before scroll */
+.fade-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+/* When visible */
+.fade-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image size */
+.conference-image {
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 10px;
+}
+
+
+/* ===================== 
+IEEE APPLICATION BOX STYLES 
+=================== */
+
+.ieee-section {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.ieee-title {
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(to right, #6e1e8e, #b3004b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+}
+
+/* main gradient box */
+.ieee-box {
+    width: 85%;
+    margin: auto;
+    padding: 35px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 10px;
+
+    background: linear-gradient(to right, #243b7b, #9b1b40);
+}
+
+/* each card */
+.ieee-card {
+    width: 180px;
+    text-align: center;
+    color: white;
+    margin: 15px 10px;
+}
+
+/* ICON placeholder */
+.ieee-icon {
+    font-size: 50px;
+    margin-bottom: 12px;
+}
+
+/* strike-through date */
+.strike {
+    text-decoration: line-through;
+    color: #ffe2e2;
+    margin: 0;
+}
+
+/* final date */
+.date {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+/* ====== ANIMATION ====== */
+.fadeUp {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUpAnim 0.7s ease-out forwards;
+}
+
+@keyframes fadeUpAnim {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== RESPONSIVE ====== */
+
+@media(max-width: 768px){
+    .ieee-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ieee-card {
+        width: 90%;
+    }
+}
+/
+ 
+
+/* ============================================================
+   ABOUT CONFERENCE SECTION STYLING
+   ============================================================ */
+   .about-conference-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: #e6f3ff;
+    padding: 60px 80px;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+/* LEFT TEXT */
+.about-content {
+    flex: 0 0 50%;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+    text-align: left
+}
+
+/* RIGHT IMAGE */
+.about-image {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+    
+}
+
+.about-image img:hover {
+    transform: scale(1.03);
+}
+
+/* ANIMATION CLASSES WHEN VISIBLE */
+.about-content.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.about-image.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Gradient Text */
+.gradientText {
+    background: linear-gradient(90deg, #4b1d64, #005bbb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.about-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-text {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #000;
+}
+
+.btn-wrapper {
+    text-align: center; /* centers inline-block button */
+    margin-top: 25px;
+}
+
+.register-btn {
+    display: inline-block;
+    margin: 25px auto 10px auto;
+    background: #005bbb;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+    transform: scale(1);
+}
+
+.register-btn:hover {
+    background: #003f7f;
+    transform: scale(1.08);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .about-conference-section {
+        flex-direction: column;
+        padding: 40px 25px;
+    }
+
+    .about-content,
+    .about-image {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        transform: none;
+    }
+
+    .about-title {
+        font-size: 32px;
+    }
+
+    .about-text {
+        text-align: justify;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-title {
+        font-size: 28px;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+
+    .about-image img {
+        max-width: 90%;
+    }
+}
+
+
+/* ================= 
+PROGRAM / PAPER GUIDELINES / VENUE SECTION 
+================= */
+
+.info-three-section {
+    background: #e6f3ff;
+    padding: 50px 80px;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 1200px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.info-three-section.fade-in {
+    opacity: 1;
+}
+
+/* Flex layout (same as IEEE section) */
+.info-three-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.info-three-box.slide-up {
+    transform: translateY(0);
+}
+
+/* Each card box */
+.info-three-card {
+    background: #d7e6ef;
+    padding: 25px 30px;
+    border-radius: 14px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    transition: 0.4s ease;
+}
+
+.info-three-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.20);
+}
+
+/* Icon styling */
+.info-three-card .icon {
+    font-size: 42px;
+    color: #005bbb;   /* your conference blue */
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+}
+
+.info-three-card:hover .icon {
+    transform: scale(1.18);
+    color: #ff5722;  /* hover orange */
+}
+
+/* Title */
+.info-three-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* More details link */
+.info-three-link {
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ff5722;
+    transition: 0.3s ease;
+}
+
+.info-three-link:hover {
+    opacity: 0.75;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-three-box {
+        justify-content: center;
+    }
+    .info-three-card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-three-card {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   SHARED SECTION STYLE
+   ============================================================ */
+   .media-collab, 
+   .collaborations, 
+   .collab-university, 
+   .keynote-speakers {
+       background: #e6f3ff;
+       padding: 60px 80px;
+       border-radius: 12px;
+       margin: 40px auto;
+       max-width: 1200px;
+       opacity: 0;
+       transition: opacity 1s ease;
+   }
+   
+   .fade-in {
+       opacity: 1;
+   }
+   
+   .section-title {
+    font-size: 36px;       /* default size */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    word-break: break-word; /* prevent text cutting */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 24px;
+        padding: 0 10px; /* small padding to avoid edges */
+    }
+}
+
+   
+   /* ============================================================
+      MEDIA COLLABORATIONS GRID
+      ============================================================ */
+   .media-grid, 
+   .collab-grid, 
+   .speaker-grid {
+       display: flex;
+       justify-content: center;
+       gap: 40px;
+       flex-wrap: wrap;
+       transform: translateY(30px);
+       transition: 0.8s ease;
+   }
+   
+   .slide-up {
+       transform: translateY(0);
+   }
+   
+   .media-item img,
+   .collab-item img,
+   .univ-box img {
+       width: 230px;
+       height: auto;
+       object-fit: contain;
+       transition: 0.4s ease;
+   }
+   
+   .media-item img:hover,
+   .collab-item img:hover,
+   .univ-box img:hover {
+       transform: scale(1.07);
+   }
+   
+   /* ============================================================
+      COLLABORATING UNIVERSITY
+      ============================================================ */
+   .univ-box {
+       text-align: center;
+       display: flex;
+       justify-content: center; /* center horizontally */
+       align-items: center;     /* center vertically */
+       gap: 20px;               /* space between logos */
+       flex-wrap: wrap;         /* wrap to next line if too many logos */
+       margin-top: 30px;
+   }
+   
+   /* ============================================================
+      KEYNOTE SPEAKERS
+      ============================================================ */
+   .speaker-card {
+       width: 260px;
+       text-align: center;
+       background: #d7e6ef;
+       padding: 25px;
+       border-radius: 12px;
+       box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+       transition: 0.4s ease;
+   }
+   
+   .speaker-card:hover {
+       transform: translateY(-8px);
+       box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+   }
+   
+   .speaker-card img {
+       width: 100%;
+       height: 240px;
+       object-fit: cover;
+       border-radius: 12px;
+       margin-bottom: 15px;
+       transition: 0.4s;
+   }
+   
+   .speaker-card img:hover {
+       transform: scale(1.03);
+   }
+   
+   .speaker-card h3 {
+       font-size: 20px;
+       font-weight: 700;
+       margin-bottom: 6px;
+   }
+   
+   .speaker-card p {
+       font-size: 15px;
+       line-height: 1.5;
+       color: #333;
+   }
+   
+   /* ============================================================
+      RESPONSIVE DESIGN
+      ============================================================ */
+   @media (max-width: 768px) {
+       .media-item img,
+       .collab-item img,
+       .univ-box img {
+           width: 180px;
+       }
+   
+       .speaker-card {
+           width: 90%;
+       }
+   }
+   
+   @media (max-width: 480px) {
+       .section-title {
+           font-size: 28px;
+       }
+   }
+   
+   /* ============================================================
+   PREVIOUS CONFERENCES
+   ============================================================ */
+.previous-conferences {
+    background: #e6f3ff ;
+    padding: 50px 20px;
+    border-radius: 12px;
+    margin-top: 40px;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Grid layout */
+.prev-conf-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.prev-card {
+    background: #d7e6ef;;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover animation */
+.prev-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.prev-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.prev-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .prev-conf-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .prev-conf-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   PAPER SUBMISSION
+   ============================================================ */
+   .paper-submission {
+    background: #e6f3ff ;
+    padding: 50px 20px;
+    border-radius: 12px;
+    margin-top: 40px;
+    transition: 0.4s ease;
+}
+
+
+.paper-text {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #000;
+    text-align: justify;
+    margin: 15px auto 0 auto; /* top 15px, auto horizontal margins */
+    max-width: 700px; /* adjust width as needed */
+}
+
+
+/* Strike-through date */
+.cut-date {
+    text-decoration: line-through;
+    color: red;
+    font-weight: 600;
+    margin-right: 5px;
+    font-size: 18px;
+}

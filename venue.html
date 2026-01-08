@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venue - IC-EETA'25</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES (Color Scheme) --- */
+        :root {
+            --primary-color: #2e003e;   /* Deep Purple */
+            --secondary-color: #4a148c; /* Rich Violet */
+            --accent-color: #ffc107;    /* Golden Yellow */
+            --text-white: #ffffff;
+            --text-grey: #666666;
+            --bg-light: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            color: var(--text-white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .logo span { color: var(--accent-color); }
+
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        .btn-nav {
+            background-color: var(--accent-color);
+            color: var(--primary-color); /* Changed text to purple for better contrast on yellow */
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .btn-nav:hover { background-color: #e0a800; color: #fff; }
+
+        /* --- HEADER HERO --- */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 4rem 5%;
+            text-align: center;
+            color: var(--text-white);
+        }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .breadcrumb { font-size: 0.9rem; color: var(--accent-color); }
+
+        /* --- CONTENT CONTAINER --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* --- VENUE DESCRIPTION --- */
+        .venue-intro {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .venue-text { flex: 1; min-width: 300px; }
+        .venue-text h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .venue-text h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin-top: 10px;
+        }
+        .venue-text p { margin-bottom: 1rem; color: var(--text-grey); }
+        
+        .venue-main-img { flex: 1; min-width: 500px; }
+        .venue-main-img img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-bottom: 6px solid var(--accent-color);
+        }
+
+        /* --- FACILITIES GRID --- */
+        .facilities {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .facility-item {
+            flex: 1;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            min-width: 250px;
+            border-left: 3px solid var(--accent-color);
+        }
+        .facility-item i { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 10px; }
+        .facility-item h4 { color: var(--secondary-color); margin-bottom: 5px; }
+
+        /* --- PHOTO GALLERY --- */
+        .gallery-section {
+            background-color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .gallery-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 250px; /* Fixed height for uniformity */
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* --- MAP SECTION --- */
+        .map-section {
+            padding: 0;
+            margin-bottom: -10px; /* Remove gap before footer */
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 450px;
+            filter: grayscale(20%); /* Slight mute to fit theme */
+            transition: filter 0.3s;
+        }
+        .map-container:hover { filter: grayscale(0%); }
+
+        .location-details {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .location-details p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .location-details i { color: var(--accent-color); margin-right: 8px; }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1a0524; /* Darker Purple for Footer */
+            color: #888;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .venue-intro { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo"><span></span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutconf.html">About Conference</a>
+            <a href="venue.html" style="color: var(--accent-color);">Venue</a>
+            <a href="#">Paper Guidelines</a>
+             <a href="ieee-main/topic.html">Topics</a>
+             <a href="ieee-main/contact_us.html">Contact Us</a>
+            <a href="ieee-main/registration.html" class="btn-nav">Register Now</a>
+        </div>
+    </nav>
+
+    <!-- Header Hero -->
+    <header class="page-header">
+        <h1>Conference Venue</h1>
+      
+    </header>
+
+    <!-- Main Venue Content -->
+    <section class="container">
+        <div class="venue-intro">
+            <div class="venue-text">
+                <h2>Medi-Caps University, Indore</h2>
+                <p>Shaping Future Technocrats Since 2015. As a private institution established under the Madhya Pradesh Niji Vishwavidyalaya Adhiniyam, we've been dedicated to providing a positive learning environment and supporting students' professional growth. Our goal is to create globally-minded citizens who can serve humanity through exceptional education and research. Join us in our mission to advance societies worldwide at this prestigious educational center.</p>
+                <p>Our primary purpose is to ensure that our students find gainful employment through which they can grow and establish their careers and make meaningful contributions to society and humanity from positions of leadership.</p>
+                <p>With a track record of over 15,000 students recruited from our campus by more than 3000 companies, we have regularly found ourselves among the top placement rankings of private universities in India and as the undisputed leader among the best private universities in Central India, reinforcing our commitment to disseminating quality education and fulfilling professional aspirations.</p>
+            </div>
+            <div class="venue-main-img">
+                <!-- Main University Shot -->
+                <img src="images/venue_medicaps.webp">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="gallery-section">
+        <h2>Campus Highlights</h2>
+        <div class="gallery-grid">
+            <!-- 1. Auditorium/Hall -->
+            <div class="gallery-item">
+                <img src="images/venue_auditorim.jpg" alt="Conference Auditorium">
+            </div>
+            <!-- 2. Academic Block -->
+            <div class="gallery-item">
+                <img src="images/venue_academic.webp" alt="Academic Block">
+            </div>
+            <!-- 3. Green Campus -->
+            <div class="gallery-item">
+                <img src="images/venue_greencampus.jpeg" alt="Green Campus Gardens">
+            </div>
+            <!-- 4. Labs/Research -->
+            <div class="gallery-item">
+                <img src="images/venue_labs.webp" alt="Research Labs">
+            </div>
+            <!-- 5. Library -->
+            <div class="gallery-item">
+                <img src="images/venue_library.jpeg" alt="University Library">
+            </div>
+            <!-- 6. Student Area -->
+            <div class="gallery-item">
+                <img src="images/venue_highlights1.webp">
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Map -->
+    <div class="location-details">
+        <h3><i class="fas fa-map-marker-alt"></i> Getting Here</h3>
+        <p>Medi-Caps University, A.B. Road, Pigdamber, Rau, Indore - 453331, Madhya Pradesh, India.</p>
+    </div>
+
+    <section class="map-section">
+        <!-- Google Maps Embed for Medi-Caps University -->
+        <iframe 
+            class="map-container"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.723554448834!2d75.8037380759364!3d22.62681593098547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962f958dcb35b51%3A0x600a94d509355154!2sMedi-Caps%20University!5e0!3m2!1sen!2sin!4v1708865432100!5m2!1sen!2sin" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Medicaps University. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* topic.css — styles matching provided screenshots */
+:root{
+  --page-bg: #e8f4fb; /* very light blue */
+  --card-radius: 10px;
+  --card-height: 64px;
+  --gap: 28px;
+  --track-gap: 56px;
+  --accent-left: #24337f; /* deep indigo */
+  --accent-right: #b21f2b; /* crimson */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0}
+body{
+  font-family: 'Poppins', Arial, sans-serif;
+  background:var(--page-bg);
+  color:#123;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* page container */
+.page{
+  max-width:1200px;
+  margin:28px auto;
+  padding:56px 28px;
+  background:transparent;
+}
+
+/* horizontal decorative divider */
+.section-divider{height:8px;width:80px;background:linear-gradient(90deg,var(--accent-left),var(--accent-right));margin:0 auto;border-radius:8px;box-shadow:0 2px 0 rgba(0,0,0,0.06)}
+.section-divider.top{margin-top:6px}
+.section-divider.bottom{margin:36px auto}
+
+/* track title */
+.track-title{
+  text-align:center;
+  font-size:28px;
+  font-weight:800;
+  color:#28346d;
+  background:linear-gradient(90deg,var(--accent-left),var(--accent-right));
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  padding:14px 0 34px 0;
+  letter-spacing:0.2px;
+}
+
+/* each track */
+.track{margin-bottom:var(--track-gap)}
+
+.track-heading{
+  text-align:center;
+  font-size:40px;
+  font-weight:800;
+  color:#24336f;
+  margin:8px 0 28px 0;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+}
+
+/* cards container: two column grid */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:18px 36px;
+}
+
+/* individual card */
+.card{
+  display:flex;
+  align-items:center;
+  min-height:var(--card-height);
+  padding:18px 22px;
+  border-radius:12px;
+  color:white;
+  font-weight:700;
+  box-shadow:0 6px 0 rgba(0,0,0,0.06);
+  background:linear-gradient(110deg,var(--accent-left), #5a2b67, var(--accent-right));
+  border:4px solid rgba(36,51,111,0.18);
+  padding-left:70px;   /* Increased from 34px → 70px */
+  position:relative;
+  line-height:1.35;    /* More breathing room */
+}
+
+
+/* icon bubble on left */
+.card .icon{
+  position:absolute;
+  left:18px;           /* Slightly more right */
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,0.18);
+  border-radius:50%;
+  box-shadow:0 3px 0 rgba(0,0,0,0.06) inset;
+  font-size:20px;      /* Slightly bigger icon */
+}
+
+
+/* long cards with wrapping text */
+.card{white-space:normal}
+
+/* responsive: single column on narrow screens */
+@media (max-width:920px){
+  .page{padding:32px 20px}
+  .cards{grid-template-columns:1fr;gap:16px 0}
+  .track-heading{font-size:34px}
+  .card{min-height:68px;padding:18px 18px 18px 64px}
+  .section-divider.bottom{width:60px}
+}
+
+/* small tweaks for very large screens */
+@media (min-width:1400px){
+  .page{max-width:1350px}
+  .track-heading{font-size:48px}
+  .card{font-size:16px}
+}
+
+.divider {
+  width: 110px; /* Adjust length here */
+  height: 8px;
+  margin: 40px auto;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent-left), var(--accent-right));
+  box-shadow: 0 3px 6px rgba(0,0,0,0.10);
+}
+
+.top-banner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 50px auto;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(90deg, var(--accent-left), #5a2b67, var(--accent-right));
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+}
